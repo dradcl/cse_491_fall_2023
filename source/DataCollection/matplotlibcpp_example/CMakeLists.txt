@@ -1,0 +1,6 @@
+project(matplotlibcpp_example)
+cmake_minimum_required(VERSION 3.10)
+find_package(Python3 3.10 COMPONENTS Interpreter Development NumPy REQUIRED)
+include_directories({PYTHON_INCLUDE_DIRS} include)
+add_executable(output src/main.cpp)
+target_link_libraries(output Python3::NumPy)
