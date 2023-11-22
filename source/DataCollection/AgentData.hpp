@@ -63,6 +63,10 @@ namespace DataCollection
             return actions;
         }
 
+        /**
+         * @brief Retrieves number of the stored actions.
+         * @return Reference to the size of the vector of action maps.
+         */
         int GetActionSize() const {
             return actions.size();
         }
@@ -91,6 +95,10 @@ namespace DataCollection
             return actionIds;
         }
 
+        /**
+         * @brief Gets The name of the agent..
+         * @return The name of the agent..
+         */
         std::string GetName() const {
             return name;
         }

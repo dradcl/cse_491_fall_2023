@@ -29,11 +29,22 @@ namespace DataCollection {
             StoreIntoStorage(*agent);
         }
 
+        /**
+         * @brief Adds a new agent to the agent_map.
+         *
+         * @param name The name of the agent to be added.
+         */
         void AddAgent(const std::string& name) {
             AgentData agent(name);
             agent_map[name] = std::make_shared<AgentData>(agent);
         }
 
+
+        /**
+         * @brief Retrieves a shared pointer to an AgentData object associated with the given name.
+         * @param name The name of the agent to be retrieved or added.
+         * @return A shared pointer to the AgentData object corresponding to the given name.
+         */
         std::shared_ptr<AgentData> GetAgent(const std::string& name)
         {
             if (agent_map.find(name)==agent_map.end()) {
@@ -45,6 +56,13 @@ namespace DataCollection {
             }
         }
 
+
+        /**
+         * @brief Gets the AgentData object associated with the given name.
+         *
+         * @param name The name of the agent whose data is to be retrieved.
+         * @return A copy of the AgentData object corresponding to the given name.
+         */
         AgentData GetAgentData(const std::string& name) {
             return *agent_map[name];
         }
